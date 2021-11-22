@@ -21,6 +21,9 @@ pip install gensim
 <h5 align="left">Number of Words: 42466428</h5>
 <h5 align="left">Number of Unique Words: 461498</h5>
 <h5 align="left">Vector Size: 250</h5>
+<h5 align="left">Dataset: Full dataset collection is done by me from Prothom Alo, Jugantor, Bangladesh Pratidin, Daily Star</h5>
+
+</br></br></br>
 
 <h2 align="left">Example:</h2>
 
