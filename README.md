@@ -1,7 +1,7 @@
 # Bengali-Word2Vec-on-Bangla-News-Dataset
 
 <h2 align="left">Info:</h2>
-This is a word2vec model created on bengali news dataset.This model can be used in NLP tasks.
+This is a word2vec model created on bengali news dataset.This model can be used in NLP tasks like Text Summarization, Sentiment Analysis, Classification.
 
 Download two other files from this link and put them in same folder:
 
