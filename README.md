@@ -1,6 +1,6 @@
 # Bengali-Word2Vec-on-Bangla-News-Dataset
 
-<h3 align="left">Info:</h3>
+<h2 align="left">Info:</h2>
 This is a word2vec model created on bengali news dataset.This model can be used in NLP tasks.
 
 Download two other files from this link and put them in same folder:
@@ -9,21 +9,21 @@ Download two other files from this link and put them in same folder:
 <li><a href="https://drive.google.com/file/d/1LbxhTXmyGTKCiTS2O6EtdbndklSo9WgP/view?usp=sharing">Second File</a></li></br>
 
 
-<h3 align="left">Installation:</h3>
+<h2 align="left">Installation:</h2>
 
 ```python
 pip install gensim
 ```
 
 </br>
-<h3 align="left">Training Details:</h3>
-<h6 align="left">Number of Sentences: 3248295</h6>
-<h6 align="left">Number of Words: 42466428</h6>
-<h6 align="left">Number of Unique Words: 461498</h6>
+<h2 align="left">Training Details:</h2>
+<h5 align="left">Number of Sentences: 3248295</h5>
+<h5 align="left">Number of Words: 42466428</h5>
+<h5 align="left">Number of Unique Words: 461498</h5>
 
-<h3 align="left">Example:</h3>
+<h2 align="left">Example:</h2>
 
-<h5 align="left">Most Similar Word</h5>
+<h4 align="left">Most Similar Word</h4>
 
 ```python
 import gensim
@@ -33,7 +33,6 @@ print(model.wv.most_similar('লাশ',topn=10))
 
 <pre>[('মরদেহ', 0.94624263048172), ('মৃতদেহ', 0.8348001837730408), ('লাশটি', 0.7794113755226135), ('মরদেহটি', 0.7031034827232361), ('মৃতদেহটি', 0.5887435674667358), ('লাশগুলো', 0.585713267326355), ('লাশও', 0.5793684124946594), ('অর্ধগলিত', 0.5611011981964111), ('দেহাবশেষ', 0.5305518507957458), ('শিশুটিকে', 0.5166477560997009)] 
 </pre>
-
 
 
 ```python
@@ -51,6 +50,17 @@ print(model.wv.most_similar('আর্সেনাল',topn=10))
 ```python
 import gensim
 model = gensim.models.Word2Vec.load("word2vec2.model")
+print(model.wv.most_similar('বুধবার',topn=10))
+```
+
+<pre>[('বৃহস্পতিবার', 0.9739387631416321), ('মঙ্গলবার', 0.9737098217010498), ('সোমবার', 0.9703750610351562), ('শনিবার', 0.9651323556900024), ('রোববার', 0.9642365574836731
+), ('শুক্রবার', 0.9547618627548218), ('রবিবার', 0.9407676458358765), ('গতকাল', 0.7294772863388062), ('বৃস্পতিবার', 0.7177606821060181), ('সোমবার', 0.683220982551574
+7)]
+</pre>
+
+```python
+import gensim
+model = gensim.models.Word2Vec.load("word2vec2.model")
 print(model.wv.similar_by_key('শেরপুর',topn=20))
 ```
 
@@ -61,8 +71,32 @@ print(model.wv.similar_by_key('শেরপুর',topn=20))
 867835521698)]
 </pre>
 
+```python
+import gensim
+model = gensim.models.Word2Vec.load("word2vec2.model")
+print(model.wv.most_similar('ভ্যান'))
+```
 
-<h5 align="left">Cosine Similarity between two sentences:</h5>
+<pre>[('পিকআপ', 0.7463464736938477), ('মাইক্রোবাস', 0.7289495468139648), ('রিকশা', 0.7281388640403748), ('প্রাইভেটকার', 0.7158138155937195), ('অটোরিকশা', 0.71521860361099
+24), ('ইজিবাইক', 0.6967160105705261), ('কাভার্ড', 0.6805071234703064), ('মোটরসাইকেল', 0.6749200820922852), ('ব্যাটারিচালিত', 0.6715964078903198), ('সিএনজি', 0.670970
+4399108887)]
+</pre>
+
+```python
+import gensim
+model = gensim.models.Word2Vec.load("word2vec2.model")
+print(model.wv.most_similar_cosmul('নিহত',topn=10))
+```
+
+<pre>[('আহত', 0.8362533450126648), ('নিখোঁজ', 0.8162438869476318), ('নিখোঁজ', 0.8142444491386414), ('গুলিবিদ্ধ', 0.8126031756401062), ('দগ্ধ', 0.7997279763221741), ('নিহ
+তের', 0.7862117886543274), ('খুন', 0.7741910219192505), ('আরোহী', 0.7703795433044434), ('মৃত্যু', 0.7670021057128906), ('হতাহত', 0.7641921043395996)]
+</pre>
+
+
+
+
+
+<h4 align="left">Cosine Similarity between two sentences:</h4>
 
 
 ```python
@@ -98,4 +132,60 @@ print(model.wv.n_similarity(ws1=text1,ws2=text2))
 <pre>0.7514724
 </pre>
 
+<h4 align="left">Cosine Similarity between two words:</h4>
+
+
+```python
+import gensim
+model = gensim.models.Word2Vec.load("word2vec2.model")
+
+print(model.wv.similarity(w1='চট্টগ্রাম',w2='ঢাকা'))
+print(model.wv.similarity(w1='উপজেলা',w2='জেলা'))
+print(model.wv.similarity(w1='চাপায়',w2='সেতু'))
+print(model.wv.similarity(w1='বুধবার',w2='বুধবার'))
+```
+
+<pre>0.6105419
+0.5725356
+0.08221294
+1.0
+</pre>
+
+<h4 align="left">Distance between two words:</h4>
+
+```python
+import gensim
+model = gensim.models.Word2Vec.load("word2vec2.model")
+print(model.wv.distance('বিদেশি','বাংলাদেশী'))
+print(model.wv.distance('দুর্ঘটনা','নিহত'))
+```
+
+<pre>0.7254734635353088
+0.8778904378414154
+</pre>
+
+
+<h4 align="left">Word Mover's distance between two sentences:</h4>
+
+```python
+import gensim
+model = gensim.models.Word2Vec.load("word2vec2.model")
+text1 = 'বগুড়ার শেরপুরে মোটরসাইকেলের ধাক্কায় এক নারী নিহত হয়েছেন'
+text2 = 'গোপালগঞ্জের কাশিয়ানীতে পিকআপ ভ্যান ও ট্রাকের সংঘর্ষে পিকআপ ভ্যানের চালক নিহত ও পাঁচজন আহত হয়েছেন'
+print(model.wv.wmdistance(text1,text2))
+```
+
+<pre>0.42776958178441427
+</pre>
+
+<h4 align="left">Most Similar word from a list of given words:</h4>
+
+```python
+import gensim
+model = gensim.models.Word2Vec.load("word2vec2.model")
+print(model.wv.most_similar_to_given('বগুড়া',['গোপালগঞ্জ','নারী','ভ্যান','পিকআপ','চালক', 'নিহত', 'ও', 'পাঁচজন', 'আহত', 'হয়েছেন']))
+```
+
+<pre>গোপালগঞ্জ
+</pre>
 
