@@ -20,6 +20,7 @@ pip install gensim
 <h5 align="left">Number of Sentences: 3248295</h5>
 <h5 align="left">Number of Words: 42466428</h5>
 <h5 align="left">Number of Unique Words: 461498</h5>
+<h5 align="left">Vector Size: 250</h5>
 
 <h2 align="left">Example:</h2>
 
