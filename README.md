@@ -71,21 +71,31 @@ model = gensim.models.Word2Vec.load("word2vec2.model")
 text1 = 'শনিবার দুপুরে ঢাকা মেডিকেল কলেজ হাসপাতালের মর্গ থেকে লাশগুলো হস্তান্তর করা হয়'.split()
 text2 = 'নারায়ণগঞ্জের রূপগঞ্জে হাসেম ফুড কারখানায় আগুনে পুড়ে নিহত আরও ২১ জনের লাশ স্বজনদের কাছে হস্তান্তর করা হয়েছে'.split()
 print(model.wv.n_similarity(ws1=text1,ws2=text2))
+```
 
+<pre>0.43630385
+</pre>
 
+```python
+import gensim
+model = gensim.models.Word2Vec.load("word2vec2.model")
 text1 = 'নারায়ণগঞ্জের রূপগঞ্জে সজীব গ্রুপের অঙ্গ প্রতিষ্ঠান হাসেম ফুড লিমিটেড নামে একটি কারখানায় ভয়াবহ অগ্নিকাণ্ডে এ পর্যন্ত মোট ৫২ জন নিহত হয়েছেন'.split()
 text2 = 'নারায়ণগঞ্জের রূপগঞ্জে সজীব গ্রুপের অঙ্গ প্রতিষ্ঠান হাসেম ফুড লিমিটেড নামে একটি কারখানায় ভয়াবহ অগ্নিকাণ্ডে এ পর্যন্ত মোট ৫২ জন নিহত হয়েছেন'.split()
 print(model.wv.n_similarity(ws1=text1,ws2=text2))
+```
 
+<pre>1.0
+</pre>
 
+```python
+import gensim
+model = gensim.models.Word2Vec.load("word2vec2.model")
 text1 = 'বগুড়ার শেরপুরে মোটরসাইকেলের ধাক্কায় এক নারী নিহত হয়েছেন'.split()
 text2 = 'গোপালগঞ্জের কাশিয়ানীতে পিকআপ ভ্যান ও ট্রাকের সংঘর্ষে পিকআপ ভ্যানের চালক নিহত ও পাঁচজন আহত হয়েছেন'.split()
 print(model.wv.n_similarity(ws1=text1,ws2=text2))
 ```
 
-<pre>0.43630385
-1.0
-0.7514724
+<pre>0.7514724
 </pre>
 
 
